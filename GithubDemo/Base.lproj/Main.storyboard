@@ -9,7 +9,7 @@
         <!--Repo Results View Controller-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="RepoResultsViewController" customModule="GithubDemo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="vXZ-lx-hvc" customClass="RepoResultsViewController" customModule="GithubDemo" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
@@ -18,55 +18,56 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="263" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Tfc-Bl-q7z">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="263" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Tfc-Bl-q7z">
                                 <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="263" id="SMX-Uf-T1G" customClass="RepoResultTableViewCell" customModule="GithubDemo" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="92" width="600" height="263"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="RepoResultTableViewCell" rowHeight="263" id="SMX-Uf-T1G" customClass="RepoResultTableViewCell" customModule="GithubDemo" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="600" height="263"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="SMX-Uf-T1G" id="uA7-07-tqJ">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="262.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="AFNetworking" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ONJ-2l-JQh">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="1000" text="AFNetworking" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ONJ-2l-JQh">
                                                     <rect key="frame" x="18" y="18" width="117" height="20.5"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="by " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PRe-Mc-T7i">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="1000" text="by " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PRe-Mc-T7i">
                                                     <rect key="frame" x="18" y="48" width="23" height="20.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="joeschmoe" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uxp-A9-a8o">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="1000" text="joeschmoe" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uxp-A9-a8o">
                                                     <rect key="frame" x="43" y="48" width="83.5" height="20.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="star" translatesAutoresizingMaskIntoConstraints="NO" id="ymA-bl-cei">
-                                                    <rect key="frame" x="388.5" y="18" width="21" height="24"/>
+                                                    <rect key="frame" x="388" y="18" width="21" height="24"/>
                                                 </imageView>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fork" translatesAutoresizingMaskIntoConstraints="NO" id="o9X-Bn-YiM">
                                                     <rect key="frame" x="521" y="18" width="18" height="24"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1043924873" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gPi-sC-6sH">
-                                                    <rect key="frame" x="411.5" y="20" width="99.5" height="20.5"/>
+                                                    <rect key="frame" x="411" y="20" width="99.5" height="20.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5047" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QCc-sW-H9U">
-                                                    <rect key="frame" x="541.5" y="20" width="40.5" height="20.5"/>
+                                                    <rect key="frame" x="541" y="20" width="40.5" height="20.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Here is the coolest repo ever. Yay." lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Ut-sy-3k1">
-                                                    <rect key="frame" x="128" y="79" width="454" height="20.5"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="250" verticalCompressionResistancePriority="1000" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Ut-sy-3k1">
+                                                    <rect key="frame" x="128" y="79" width="454" height="173.5"/>
+                                                    <string key="text">Here is the coolest repo ever. Yay. Here is the coolest repo ever. Yay. Here is the coolest repo ever. Yay. Here is the coolest repo ever. Yay. Here is the coolest repo ever. Yay.</string>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
@@ -88,14 +89,14 @@
                                                 <constraint firstItem="ONJ-2l-JQh" firstAttribute="top" secondItem="PRe-Mc-T7i" secondAttribute="bottom" constant="-10" id="J2o-Ra-zNN"/>
                                                 <constraint firstItem="gPi-sC-6sH" firstAttribute="leading" secondItem="ymA-bl-cei" secondAttribute="trailing" constant="2" id="Ja2-u0-5iJ"/>
                                                 <constraint firstItem="ONJ-2l-JQh" firstAttribute="top" secondItem="uA7-07-tqJ" secondAttribute="topMargin" constant="3" id="Kqq-YJ-ypi"/>
-                                                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="tVh-9h-JUo" secondAttribute="bottom" priority="999" constant="5" id="LMb-za-WuI"/>
+                                                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="tVh-9h-JUo" secondAttribute="bottom" priority="999" constant="10" id="LMb-za-WuI"/>
                                                 <constraint firstItem="QCc-sW-H9U" firstAttribute="centerY" secondItem="o9X-Bn-YiM" secondAttribute="centerY" id="Ltj-Li-FRq"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="QCc-sW-H9U" secondAttribute="trailing" constant="10" id="P8F-BK-Sn5"/>
                                                 <constraint firstItem="gPi-sC-6sH" firstAttribute="centerY" secondItem="ymA-bl-cei" secondAttribute="centerY" id="Roy-3f-YQl"/>
                                                 <constraint firstItem="o9X-Bn-YiM" firstAttribute="leading" secondItem="gPi-sC-6sH" secondAttribute="trailing" constant="10" id="S1Z-eV-teB"/>
                                                 <constraint firstItem="QCc-sW-H9U" firstAttribute="leading" secondItem="o9X-Bn-YiM" secondAttribute="trailing" constant="2" id="SkZ-cz-lYi"/>
                                                 <constraint firstItem="gPi-sC-6sH" firstAttribute="leading" secondItem="ymA-bl-cei" secondAttribute="trailing" constant="8" id="TLd-Vc-iNG"/>
-                                                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="5Ut-sy-3k1" secondAttribute="bottom" constant="5" id="VS7-hz-uWO"/>
+                                                <constraint firstAttribute="bottom" secondItem="5Ut-sy-3k1" secondAttribute="bottom" priority="999" constant="10" id="VS7-hz-uWO"/>
                                                 <constraint firstItem="PRe-Mc-T7i" firstAttribute="top" secondItem="ONJ-2l-JQh" secondAttribute="bottom" constant="10" id="ZwA-NZ-ilw"/>
                                                 <constraint firstItem="ONJ-2l-JQh" firstAttribute="top" secondItem="uA7-07-tqJ" secondAttribute="topMargin" constant="20" id="aTb-ai-Oqb"/>
                                                 <constraint firstItem="ymA-bl-cei" firstAttribute="top" secondItem="ONJ-2l-JQh" secondAttribute="top" id="dOb-f3-fyj"/>
@@ -125,10 +126,24 @@
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="authorLabel" destination="uxp-A9-a8o" id="3ot-XC-WBx"/>
+                                            <outlet property="avatarImageView" destination="tVh-9h-JUo" id="1lI-lf-gbf"/>
+                                            <outlet property="descriptionLabel" destination="5Ut-sy-3k1" id="RP9-Yd-hDa"/>
+                                            <outlet property="forkCountLabel" destination="QCc-sW-H9U" id="iJI-Oa-2de"/>
+                                            <outlet property="nameLabel" destination="ONJ-2l-JQh" id="vLx-Le-sg5"/>
+                                            <outlet property="starCountLabel" destination="gPi-sC-6sH" id="QF9-Et-rbG"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
                         </subviews>
+                        <constraints>
+                            <constraint firstItem="Tfc-Bl-q7z" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="41N-RL-8ai"/>
+                            <constraint firstAttribute="trailing" secondItem="Tfc-Bl-q7z" secondAttribute="trailing" id="97z-at-2oh"/>
+                            <constraint firstItem="Tfc-Bl-q7z" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" id="9ov-cX-GnM"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="Tfc-Bl-q7z" secondAttribute="bottom" id="dQK-08-SrP"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="x5q-EH-pP8"/>
                     <connections>

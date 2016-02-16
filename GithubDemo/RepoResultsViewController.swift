@@ -10,7 +10,7 @@ import UIKit
 import MBProgressHUD
 
 // Main ViewController
-class RepoResultsViewController: UIViewController {
+class RepoResultsViewController: UIViewController, UITableViewDelegate {
 
     @IBOutlet weak var repoResultsTableView: UITableView!
     var searchBar: UISearchBar!
@@ -20,6 +20,10 @@ class RepoResultsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        repoResultsTableView.delegate = self
+        repoResultsTableView.dataSource = self
+        repoResultsTableView.estimatedRowHeight = 170
+        repoResultsTableView.rowHeight = UITableViewAutomaticDimension
 
         // Initialize the UISearchBar
         searchBar = UISearchBar()
@@ -39,12 +43,14 @@ class RepoResultsViewController: UIViewController {
         MBProgressHUD.showHUDAddedTo(self.view, animated: true)
 
         // Perform request to GitHub API to get the list of repositories
-        GithubRepo.fetchRepos(searchSettings, successCallback: { (newRepos) -> Void in
+        GithubRepo.fetchRepos(searchSettings, successCallback: { (newRepos) in
 
             // Print the returned repositories to the output window
             for repo in newRepos {
                 print(repo)
-            }   
+            }
+            self.repos = newRepos
+            self.repoResultsTableView.reloadData()
 
             MBProgressHUD.hideHUDForView(self.view, animated: true)
             }, error: { (error) -> Void in
@@ -75,5 +81,24 @@ extension RepoResultsViewController: UISearchBarDelegate {
         searchSettings.searchString = searchBar.text
         searchBar.resignFirstResponder()
         doSearch()
+    }
+}
+
+extension RepoResultsViewController: UITableViewDataSource {
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if let repos = self.repos {
+            return repos.count
+        } else {
+            return 0
+        }
+
+    }
+
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier("RepoResultTableViewCell", forIndexPath: indexPath) as! RepoResultTableViewCell
+        cell.githubRepo = self.repos[indexPath.row]
+        return cell
+
     }
 }
